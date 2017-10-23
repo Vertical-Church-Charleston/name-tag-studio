@@ -1,3 +1,9 @@
-{{#each model as |tag|}}
-  {{tag-component data=tag}}
-{{/each}}
+<section class="container">
+  <aside class="row">
+    {{#each model as |tag|}}
+      <div class="col-sm-4 col-lg-3">
+        {{tag-component data=tag}}
+      </div>
+    {{/each}}
+  </aside>
+</section>
