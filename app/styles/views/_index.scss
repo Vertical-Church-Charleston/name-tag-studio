@@ -1,6 +1,6 @@
-body.application.index {
+body.application.main {
   background-color: $grey;
-  .ember-view {
+  > .ember-view {
     display: flex;
     justify-content: center;
     align-items: center;
