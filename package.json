@@ -38,7 +38,8 @@
     "ember-resolver": "^4.0.0",
     "ember-source": "^2.16.0",
     "loader.js": "^4.2.3",
-    "popper.js": "^1.12.6"
+    "popper.js": "^1.12.6",
+    "qunit-assert-classes": "^1.0.2"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
