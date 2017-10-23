@@ -1,3 +1,17 @@
 body.application.index {
   background-color: $grey;
+  .ember-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .logo {
+    max-width: 420px;
+    margin-bottom: 40px;
+  }
+  h1 {
+    color: white;
+    margin-bottom: 40px;
+  }
 }
