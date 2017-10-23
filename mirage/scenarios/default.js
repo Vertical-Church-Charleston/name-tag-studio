@@ -5,5 +5,5 @@ export default function(server) {
     This data will not be loaded in your tests.
   */
 
-  server.createList('tag', 2);
+  server.createList('tag', 2,{template:1});
 }

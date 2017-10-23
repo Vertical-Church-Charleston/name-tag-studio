@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import Application from '../../app';
 import config from '../../config/environment';
+// import hasClasses  from 'qunit-assert-classes';
 
 export default function startApp(attrs) {
   let attributes = Ember.merge({}, config.APP);
