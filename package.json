@@ -35,8 +35,10 @@
     "ember-data": "^2.16.3",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
+    "ember-math-helpers": "^2.2.3",
     "ember-resolver": "^4.0.0",
     "ember-source": "^2.16.0",
+    "ember-truth-helpers": "^2.0.0",
     "loader.js": "^4.2.3",
     "popper.js": "^1.12.6",
     "qunit-assert-classes": "^1.0.2"
