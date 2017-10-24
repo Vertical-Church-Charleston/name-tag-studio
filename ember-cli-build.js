@@ -23,5 +23,9 @@ module.exports = function(defaults) {
 
   app.import('vendor/bootstrap/bootstrap.min.css');
 
+  app.import({
+    testing: 'node_modules/qunit-dom/dist/qunit-dom.js'
+  });
+
   return app.toTree();
 };
