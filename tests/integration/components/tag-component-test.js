@@ -19,5 +19,6 @@ test('it sets a class to render a name tag background', function(assert) {
   this.set('data',{template:1});
 
   this.render(hbs`{{tag-component data=data}}`);
-  assert.dom(this.$()).hasClass('template-1');
+  assert.dom('.template-1').exists();
+  // assert.dom('div',this._element).hasClass('template-1');
 });
