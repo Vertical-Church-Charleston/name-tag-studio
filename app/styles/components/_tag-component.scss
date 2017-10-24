@@ -6,10 +6,6 @@
   margin-bottom: 15%;
   box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.75);
   transition: transform .5s ease, box-shadow .5s ease;
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 52px -6px rgba(0, 0, 0, 0.75);
-  }
   .name {
     position: absolute;
     bottom: 0;

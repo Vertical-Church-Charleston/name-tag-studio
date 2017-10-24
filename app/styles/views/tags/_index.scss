@@ -1,6 +1,12 @@
-body.tags-index {
+body.tags-index:not(.tags-index-new) {
   .nav {
     padding: 40px 0;
+  }
+  .tag-component {
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 52px -6px rgba(0, 0, 0, 0.75);
+    }
   }
   .no-tags {
     svg {

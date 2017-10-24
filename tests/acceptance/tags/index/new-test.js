@@ -11,3 +11,11 @@ test('should render a form section and display section', function(assert) {
     assert.equal( find('.display-section').length, 1 );
   });
 });
+
+test('updating first name should update first name on name tag display',function(assert){
+  visit('/tags/new');
+  fillIn('input#first-name','Jordan');
+  andThen(function(){
+    assert.equal(find('.display-section .tag-component .first-name').text(),'Jordan');
+  });
+})
