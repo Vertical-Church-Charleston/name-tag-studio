@@ -21,6 +21,11 @@
       font-size: 36.88px;
       display: block;
       line-height: 1.2em;
+    }
+  }
+  &.template-1 {
+    .first-name, .last-name {
+      font-size: 36.88px;
       @media (max-width: 1199px){
         font-size: 30.02px;
       }
