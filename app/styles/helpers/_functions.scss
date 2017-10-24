@@ -2,3 +2,6 @@
 @function spacer($key: 0) {
   @return map-get($spacers, $key);
 }
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}

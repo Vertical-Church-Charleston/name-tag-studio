@@ -1,11 +1,8 @@
-// Litera 4.0.0
-// Bootswatch
-
 // Buttons =====================================================================
 
 @each $color, $value in $theme-colors {
   @if $color == 'light' {
-    .btn-light {
+    .btn-light:not(.without-shadow) {
       box-shadow: 0 8px 32px -4px transparentize(gray('400'),0.4);
       &:focus,
       &.focus,
@@ -15,7 +12,7 @@
       }
     }
   } @else {
-    .btn-#{$color} {
+    .btn-#{$color}:not(.without-shadow) {
       color: white;
       box-shadow: 0 8px 32px -4px transparentize($value,0.4);
       &:focus,
@@ -31,5 +28,15 @@
   .oi {
     font-size: 0.8em;
     margin-left: spacer(2);
+  }
+}
+
+// Forms =====================================================================
+
+.form-control {
+  border: none;
+  &:focus,
+  &.focus {
+    box-shadow: $input-btn-focus-box-shadow
   }
 }
