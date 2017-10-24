@@ -2,4 +2,12 @@ body.tags-index {
   .nav {
     padding: 40px 0;
   }
+  .no-tags {
+    svg {
+      width: 200px;
+      path, polygon, rect {
+        fill: $text-muted;
+      }
+    }
+  }
 }
