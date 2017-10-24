@@ -15,13 +15,9 @@ test('it renders first and last name', function(assert) {
   assert.equal(this.$().find('.last-name').text(), 'Riser');
 });
 
-// test('it sets a class to render a name tag background', function(assert) {
-//   this.set('data',{template:1});
+test('it sets a class to render a name tag background', function(assert) {
+  this.set('data',{template:1});
 
-//   this.render(hbs`{{tag-component data=data}}`);
-//   return wait()
-//     .then(() => {
-//       // assertions for after async behavior
-//       assert.ok(this.$('>:first-child').hasClass('template-1'));
-//   });
-// });
+  this.render(hbs`{{tag-component data=data}}`);
+  assert.dom(this.$()).hasClass('template-1');
+});
