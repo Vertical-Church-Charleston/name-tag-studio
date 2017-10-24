@@ -10,6 +10,6 @@ export default Component.extend({
     return `template-${this.get('data.template')}`;
   }),
   backgroundImage: computed('data.template',function(){
-    return `background-image: url('images/name-tag-backs/name-tag-${this.get('data.template')}.svg')`;
+    return `background-image: url('/images/name-tag-backs/name-tag-${this.get('data.template')}.svg')`;
   })
 });

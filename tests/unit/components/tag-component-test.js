@@ -21,5 +21,5 @@ test('it generates a background url', function(assert) {
     let component = this.subject();
     // Renders the component to the page
     component.set('data',{template:1});
-    assert.equal(component.get('backgroundImage'),"background-image: url('images/name-tag-backs/name-tag-1.svg')");
+    assert.equal(component.get('backgroundImage'),"background-image: url('/images/name-tag-backs/name-tag-1.svg')");
   });
