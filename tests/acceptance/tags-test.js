@@ -20,3 +20,12 @@ test('Shows a message to create first name tag when list is empty', function(ass
     assert.equal( find('.no-tags').length, 1 );
   });
 });
+
+test('Clicking "New" button links to the new tag page', function(assert){
+  visit('/tags');
+  click('button.add-new');
+
+  andThen(function(){
+    assert.equal(currentRouteName(),'tags.index.new');
+  })
+})

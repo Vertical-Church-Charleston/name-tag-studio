@@ -3,7 +3,9 @@
     <div class="col-sm-12">
       <ul class="nav">
         <li class="nav-item">
-          <button class="btn btn-lg btn-primary">New <i class="oi oi-plus"></i></button>
+          {{#link-to 'tags.index.new' tagName='button' class="btn btn-lg btn-primary add-new"}}
+            New <i class="oi oi-plus"></i>
+          {{/link-to}}
         </li>
       </ul>
     </div>
@@ -42,3 +44,4 @@
     </aside>
   {{/if}}
 </section>
+{{outlet}}

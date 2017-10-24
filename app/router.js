@@ -9,7 +9,9 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('main',{path:'/'})
   this.route('tags',function(){
-
+    this.route('index',{path:'/'},function(){
+      this.route('new');
+    });
   });
 });
 
