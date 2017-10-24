@@ -1,0 +1,27 @@
+$theme-colors: (
+  "primary": #4582EC,
+  "secondary":  $secondary,
+  "success": #02B875,
+  "info": #5bc0de,
+  "warning": #f0ad4e,
+  "danger": #d9534f,
+  "light":      $light,
+  "dark":       $dark
+);
+$gray-lighter: #ddd;
+
+// Functions
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+// Buttons
+$input-btn-padding-x: 1.1rem;
+$input-btn-padding-y: .5rem;
+$input-btn-padding-x-sm: .75rem;
+$input-btn-padding-y-sm: .25rem;
+$input-btn-padding-x-lg: 1.5rem;
+$input-btn-padding-y-lg: .75rem;
+$btn-border-radius: #{$line-height-base + strip-unit($input-btn-padding-x)}rem;
+$btn-border-radius-sm: #{$line-height-sm + strip-unit($input-btn-padding-x-sm)}rem;
+$btn-border-radius-lg: #{$line-height-lg + strip-unit($input-btn-padding-x-lg)}rem;

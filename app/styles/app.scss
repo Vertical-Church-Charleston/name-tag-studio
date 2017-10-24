@@ -1,3 +1,20 @@
+// Bootstrap Required Sass
+@import "functions";
+@import "variables";
+@import "mixins";
+
+// Bootstrap variable overrides
+@import 'theme/variables';
+
+// Bootstrap Elements
+@import "reboot";
+@import "grid";
+@import "buttons";
+@import "nav";
+
+// Bootstrap theme overrides
+@import 'theme/theme';
+
 @import 'helpers/variables';
 @import 'helpers/fonts';
 @import 'helpers/base';
@@ -5,3 +22,4 @@
 @import 'components/tag-component';
 
 @import 'views/index';
+@import 'views/tags/index';

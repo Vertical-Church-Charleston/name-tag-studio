@@ -1,0 +1,25 @@
+// Litera 4.0.0
+// Bootswatch
+
+// Buttons =====================================================================
+
+@each $color, $value in $theme-colors {
+  @if $color == 'light' {
+    .btn-light {
+      box-shadow: 0 8px 32px -4px transparentize(gray('400'),0.4);
+      &:focus,
+      &.focus {
+        box-shadow: 0 8px 32px -4px transparentize(gray('400'),0.4);
+      }
+    }
+  } @else {
+    .btn-#{$color} {
+      color: white;
+      box-shadow: 0 8px 32px -4px transparentize($value,0.4);
+      &:focus,
+      &.focus {
+        box-shadow: 0 8px 32px -4px transparentize($value,0.4);
+      }
+    }
+  }
+}
