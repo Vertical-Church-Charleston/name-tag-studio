@@ -2,13 +2,15 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var Funnel = require('broccoli-funnel');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
     sassOptions: {
       includePaths: [
-        'node_modules/bootstrap/scss'
+        'node_modules/bootstrap/scss',
+        'node_modules/open-iconic/font/css'
       ]
     }
   });
@@ -26,7 +28,10 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  // app.import('vendor/bootstrap/bootstrap.min.css');
+  var extraAssets = new Funnel('node_modules/open-iconic/font/fonts', {
+    include: ['**/*'],
+    destDir: '/assets/fonts'
+ });
 
-  return app.toTree();
+  return app.toTree([extraAssets]);
 };

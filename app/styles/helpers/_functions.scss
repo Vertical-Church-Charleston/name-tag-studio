@@ -1,0 +1,4 @@
+// Retreive space Sass map
+@function spacer($key: 0) {
+  @return map-get($spacers, $key);
+}

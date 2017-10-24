@@ -17,6 +17,7 @@
   "devDependencies": {
     "bootstrap": "^4.0.0-beta.2",
     "broccoli-asset-rev": "^2.4.5",
+    "broccoli-funnel": "^2.0.1",
     "ember-ajax": "^3.0.0",
     "ember-body-class": "^0.4.0",
     "ember-cli": "^2.16.2",
@@ -41,6 +42,7 @@
     "ember-source": "^2.16.0",
     "ember-truth-helpers": "^2.0.0",
     "loader.js": "^4.2.3",
+    "open-iconic": "^1.1.1",
     "popper.js": "^1.12.6",
     "qunit-dom": "^0.3.3"
   },

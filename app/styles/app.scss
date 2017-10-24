@@ -3,6 +3,8 @@
 @import "variables";
 @import "mixins";
 
+@import "helpers/functions";
+
 // Bootstrap variable overrides
 @import 'theme/variables';
 
@@ -19,6 +21,8 @@
 
 @import 'helpers/variables';
 @import 'helpers/fonts';
+$icon-font-path: 'fonts/';
+@import 'open-iconic-bootstrap.scss';
 @import 'helpers/base';
 
 @import 'components/tag-component';
