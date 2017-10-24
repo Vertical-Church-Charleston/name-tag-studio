@@ -41,7 +41,6 @@
     "ember-truth-helpers": "^2.0.0",
     "loader.js": "^4.2.3",
     "popper.js": "^1.12.6",
-    "qunit-assert-classes": "^1.0.2",
     "qunit-dom": "^0.3.3"
   },
   "engines": {
