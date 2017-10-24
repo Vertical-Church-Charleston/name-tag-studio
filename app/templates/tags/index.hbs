@@ -8,11 +8,17 @@
       </ul>
     </div>
   </div>
-  <aside class="row">
-    {{#each model as |tag|}}
-      <div class="col-sm-4 col-lg-3">
-        {{tag-component data=tag}}
-      </div>
-    {{/each}}
-  </aside>
+  {{#if model.length}}
+    <aside class="row">
+      {{#each model as |tag|}}
+        <div class="col-sm-4 col-lg-3">
+          {{tag-component data=tag}}
+        </div>
+      {{/each}}
+    </aside>
+  {{else}}
+    <aside class="no-tags">
+      <h1>You have not created any tags yet, click "New" to add your first one now!</h1>
+    </aside>
+  {{/if}}
 </section>

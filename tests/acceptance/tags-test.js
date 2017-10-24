@@ -11,3 +11,12 @@ test('List view shows 2 tags', function(assert) {
     assert.equal( find('.tag-component').length, 2 );
   });
 });
+
+test('Shows a message to create first name tag when list is empty', function(assert) {
+  visit('/tags');
+
+  andThen(function() {
+    assert.equal( find('.tag-component').length, 0 );
+    assert.equal( find('.no-tags').length, 1 );
+  });
+});
