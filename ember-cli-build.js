@@ -31,7 +31,12 @@ module.exports = function(defaults) {
   var extraAssets = new Funnel('node_modules/open-iconic/font/fonts', {
     include: ['**/*'],
     destDir: '/assets/fonts'
- });
+  });
 
-  return app.toTree([extraAssets]);
+  var iconPage = new Funnel('node_modules/open-iconic/sprite', {
+    include: ['open-iconic.html','open-iconic.min.svg','open-iconic.svg'],
+    destDir: '/iconic'
+  });
+
+  return app.toTree([extraAssets,iconPage]);
 };
