@@ -26,6 +26,7 @@
   }
   &.template-1 {
     .first-name, .last-name {
+      text-transform: capitalize;
       font-size: 36.88px;
       @media (max-width: 1199px){
         font-size: 30.02px;
