@@ -1,4 +1,5 @@
 import { test } from 'qunit';
+// import test from 'ember-sinon-qunit/test-support/test';
 import moduleForAcceptance from 'name-tags/tests/helpers/module-for-acceptance';
 
 moduleForAcceptance('Acceptance | tags/list/edit');
