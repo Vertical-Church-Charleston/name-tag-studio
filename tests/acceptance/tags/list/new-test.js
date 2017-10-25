@@ -30,13 +30,15 @@ test('should not list a record without saving',function(assert){
   });
 });
 
-test('should save a record on form submission',function(assert){
+test('should push record into print list on save',function(assert){
   visit('/tags/new');
   fillIn('input#first-name','Jordan');
   fillIn('input#last-name','Riser');
   click('button[type=submit]');
-  andThen(function(){
-    assert.equal(find('.tags-list .tag-component .first-name').text(),'Jordan');
-    assert.equal(currentRouteName(),'tags.list.index');
+  andThen(()=>{
+    let controller = this.application.__container__.lookup('controller:tags/list/new');
+    assert.equal(controller.get('printList.length'),1);
+    // assert.equal(find('.tags-list .tag-component .first-name').text(),'Jordan');
+    // assert.equal(currentRouteName(),'tags.list.index');
   });
 })

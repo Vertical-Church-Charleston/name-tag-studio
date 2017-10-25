@@ -11,7 +11,9 @@ export default Route.extend({
   actions: {
     create(){
       var newTag = this.store.createRecord('tag',this.controller.get('model'));
-      newTag.save().then(()=> this.transitionTo('tags.list'));
+      newTag.save().then(()=>{
+        this.controller.get('printList').pushObject(newTag);
+      });
     }
   }
 });
