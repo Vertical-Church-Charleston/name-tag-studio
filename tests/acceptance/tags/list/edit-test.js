@@ -14,3 +14,10 @@ test('should render pre-filled input and display sections', function(assert) {
     assert.equal( find('.display-section .tag-component .last-name').text(), 'Riser');
   });
 });
+
+test('should redirect to list page if model was not found',function(assert){
+  visit('/tags/edit/1');
+  andThen(function(){
+    assert.equal(currentRouteName(),'tags.list.index');
+  })
+});

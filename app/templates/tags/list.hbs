@@ -14,7 +14,9 @@
     <aside class="row tags-list">
       {{#each model as |tag|}}
         <div class="col-sm-4 col-lg-3">
-          {{tag-component data=tag}}
+          {{#link-to 'tags.list.edit' tag}}
+            {{tag-component data=tag}}
+          {{/link-to}}
         </div>
       {{/each}}
     </aside>

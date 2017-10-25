@@ -1,0 +1,20 @@
+body.tags-list-edit {
+  .edit-tag-section-wrapper {
+    top: 0;
+    z-index: 1;
+  }
+  .input-section {
+    left: 0;
+    background-color: $vertical-grey;
+    .form-control {
+      &:focus,
+      &.focus {
+        box-shadow: 0 0 0 0.3rem rgba(darken($vertical-grey,25%), 0.25);
+      }
+    }
+  }
+  .display-section {
+    right: 0;
+    background-color: white;
+  }
+}

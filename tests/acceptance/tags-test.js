@@ -29,3 +29,13 @@ test('Clicking "New" button links to the new tag page', function(assert){
     assert.equal(currentRouteName(),'tags.list.new');
   })
 })
+
+test('Clicking a tag links to the edit tag page', function(assert){
+  server.create('tag');
+  visit('/tags');
+  click('.tag-component');
+
+  andThen(function(){
+    assert.equal(currentRouteName(),'tags.list.edit');
+  })
+})
