@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('tags',function(){
     this.route('list',{path:'/'},function(){
       this.route('new');
+      this.route('edit',{path:'edit/:id'});
     });
   });
 });

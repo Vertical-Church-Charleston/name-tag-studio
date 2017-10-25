@@ -1,0 +1,20 @@
+<section class="input-section new-tag-section-wrapper position-absolute w-50 h-100 d-flex justify-content-center align-items-center">
+  <form class="w-50" {{action "update" on="submit"}}>
+    <div class="form-group">
+      {{input type="text" value=model.firstName class="form-control form-control-lg" id="first-name" placeholder="First Name"}}
+    </div>
+    <div class="form-group">
+      {{input type="text" value=model.lastName class="form-control form-control-lg" id="last-name" placeholder="Last Name"}}
+    </div>
+    <button type="submit" class="btn btn-lg btn-block without-shadow btn-light">Create</button>
+  </form>
+</section>
+<section class="display-section new-tag-section-wrapper position-absolute w-50 h-100">
+  <div class="container-fluid h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-lg-6">
+        {{tag-component data=model}}
+      </div>
+    </div>
+  </div>
+</section>
