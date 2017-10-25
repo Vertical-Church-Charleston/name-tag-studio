@@ -1,4 +1,4 @@
-body.tags-list:not(.tags-index-new) {
+body.tags-list:not(.tags-list-new):not(.tags-list-edit) {
   .nav {
     padding: 40px 0;
   }
