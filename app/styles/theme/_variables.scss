@@ -28,4 +28,13 @@ $input-border-radius: #{$input-btn-line-height + strip-unit($input-btn-padding-y
 $input-border-radius-lg: #{$input-btn-line-height-lg + strip-unit($input-btn-padding-y-lg)}rem;
 $input-border-radius-sm: #{$input-btn-line-height-sm + strip-unit($input-btn-padding-y-sm)}rem;
 $input-focus-border-color: transparent;
-$input-btn-focus-width: 0.3rem
+$input-btn-focus-width: 0.3rem;
+
+// Alerts
+
+$alert-padding-x:             1.25rem !default;
+$alert-padding-y:             .75rem !default;
+$alert-margin-bottom:         $spacer-y !default;
+$alert-border-radius:         $border-radius !default;
+$alert-link-font-weight:      600 !default;
+$alert-border-width:          $border-width !default;
