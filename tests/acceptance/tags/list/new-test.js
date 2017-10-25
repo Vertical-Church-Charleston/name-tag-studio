@@ -40,7 +40,5 @@ test('should push record into print list on save',function(assert){
     assert.equal(controller.get('printList.length'),1,'pushes the tag into the array');
     assert.equal(find('.display-section .print-list .count').text().trim(),'1','displays the count of the print list');
     assert.equal(find('input').val(),'','clears inputs for next input');
-    // assert.equal(find('.tags-list .tag-component .first-name').text(),'Jordan');
-    // assert.equal(currentRouteName(),'tags.list.index');
   });
 });
