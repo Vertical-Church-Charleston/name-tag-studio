@@ -18,4 +18,14 @@ test('updating first name should update first name on name tag display',function
   andThen(function(){
     assert.equal(find('.display-section .tag-component .first-name').text(),'Jordan');
   });
-})
+});
+
+test('should not list a record without saving',function(assert){
+  visit('/tags/new');
+  andThen(function(){
+    visit('/tags');
+    andThen(function(){
+      assert.equal(find('.tag-component').length, 0);
+    });
+  });
+});
