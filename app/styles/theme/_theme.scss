@@ -24,7 +24,30 @@
     }
   }
 }
-.btn-lg {
+.btn {
+  cursor: pointer;
+  &.btn-icon {
+    padding: 0;
+    height: 42px;
+    width: 42px;
+    line-height: 44px;
+  }
+  &.btn-lg {
+    &.btn-icon {
+      height: 56px;
+      width: 56px;
+      line-height: 60px;
+    }
+  }
+  &.btn-sm {
+    &.btn-icon {
+      height: 31px;
+      width: 31px;
+      line-height: 33px;
+    }
+  }
+}
+.btn-lg:not(.btn-icon) {
   .oi {
     font-size: 0.8em;
     margin-left: spacer(2);
