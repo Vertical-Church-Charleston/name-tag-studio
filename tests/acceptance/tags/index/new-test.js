@@ -29,3 +29,14 @@ test('should not list a record without saving',function(assert){
     });
   });
 });
+
+test('should save a record on form submission',function(assert){
+  visit('/tags/new');
+  fillIn('input#first-name','Jordan');
+  fillIn('input#last-name','Riser');
+  click('button[type=submit]');
+  andThen(function(){
+    assert.equal(find('.tags-list .tag-component .first-name').text(),'Jordan');
+    assert.equal(currentRouteName(),'tags.index.index');
+  });
+})

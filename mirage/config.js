@@ -27,4 +27,5 @@ export default function() {
   */
 
   this.get('/tags');
+  this.post('/tags');
 }

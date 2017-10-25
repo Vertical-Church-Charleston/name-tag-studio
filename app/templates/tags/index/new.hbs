@@ -1,5 +1,5 @@
 <section class="input-section new-tag-section-wrapper position-absolute w-50 h-100 d-flex justify-content-center align-items-center">
-  <form class="w-50">
+  <form class="w-50" {{action "create" on="submit"}}>
     <div class="form-group">
       {{input type="text" value=model.firstName class="form-control form-control-lg" id="first-name" placeholder="First Name"}}
     </div>
