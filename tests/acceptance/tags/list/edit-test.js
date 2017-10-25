@@ -5,8 +5,8 @@ import moduleForAcceptance from 'name-tags/tests/helpers/module-for-acceptance';
 moduleForAcceptance('Acceptance | tags/list/edit');
 
 test('should render pre-filled input and display sections', function(assert) {
-  var tag = server.create('tag',{firstName:"Jordan",lastName:"Riser",template:1});
-  visit(`/tags/edit/${tag.attrs.id}`);
+  server.create('tag',{firstName:"Jordan",lastName:"Riser",template:1});
+  visit('/tags/edit/1');
 
   andThen(function() {
     assert.equal( find('.input-section input#first-name').val(), 'Jordan');
@@ -21,4 +21,28 @@ test('should redirect to list page if model was not found',function(assert){
   andThen(function(){
     assert.equal(currentRouteName(),'tags.list.index');
   })
+});
+
+test('should not update a record without saving',function(assert){
+  server.create('tag',{firstName:"Jordan",lastName:"Riser",template:1});
+  visit('/tags/edit/1');
+  fillIn('input#first-name','Josh');
+  andThen(function(){
+    visit('/tags');
+    andThen(function(){
+      assert.equal(find('.tags-list .tag-component .first-name').text(),'Jordan');
+    });
+  });
+});
+
+test('should save a record on form submission',function(assert){
+  server.create('tag',{firstName:"Jordan",lastName:"Riser",template:1});
+  visit('/tags/edit/1');
+  fillIn('input#first-name','Josh');
+  fillIn('input#last-name','Riser');
+  click('button[type=submit]');
+  andThen(function(){
+    assert.equal(find('.tags-list .tag-component .first-name').text(),'Josh');
+    assert.equal(currentRouteName(),'tags.list.index');
+  });
 });

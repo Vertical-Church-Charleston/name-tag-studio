@@ -5,7 +5,7 @@ body.tags-list-edit {
   }
   .input-section {
     left: 0;
-    background-color: $vertical-grey;
+    background-color: theme-color('primary');
     .form-control {
       &:focus,
       &.focus {

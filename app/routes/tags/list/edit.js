@@ -6,6 +6,11 @@ export default Route.extend({
   model(params){
     return this.store.find('tag',params.id);
   },
+  destroyModel: function () {
+    if(this.controller.get('model.hasDirtyAttributes')){
+      this.controller.get('model').rollbackAttributes();
+    }
+  }.on('deactivate'),
   actions: {
     error: function(reason) {
       if (reason.status == 404)
@@ -16,5 +21,8 @@ export default Route.extend({
         });
         this.transitionTo('tags.list');
     },
+    update(){
+      this.controller.get('model').save().then(()=> this.transitionTo('tags.list'));
+    }
   },
 });

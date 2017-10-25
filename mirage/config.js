@@ -29,4 +29,5 @@ export default function() {
   this.get('/tags');
   this.get('/tags/:id');
   this.post('/tags');
+  this.patch('/tags/:id');
 }
