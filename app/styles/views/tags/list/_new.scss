@@ -6,12 +6,6 @@ body.tags-list-new {
   .input-section {
     left: 0;
     background-color: theme-color('primary');
-    .form-control {
-      &:focus,
-      &.focus {
-        box-shadow: 0 0 0 0.3rem rgba(darken($vertical-grey,25%), 0.25);
-      }
-    }
   }
   .display-section {
     right: 0;
