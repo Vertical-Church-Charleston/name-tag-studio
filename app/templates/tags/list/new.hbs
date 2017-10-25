@@ -1,4 +1,7 @@
 <section class="input-section new-tag-section-wrapper position-absolute w-50 h-100 d-flex justify-content-center align-items-center">
+  {{#link-to 'tags.list'}}
+    <button class="btn btn-icon btn-lg btn-light position-absolute cursor-pointer" style="top:15px;left:15px"><i class="oi oi-chevron-left"></i></button>
+  {{/link-to}}
   <form class="w-50" {{action "create" on="submit"}}>
     <div class="form-group">
       {{input type="text" value=model.firstName class="form-control with-shadow form-control-lg" id="first-name" placeholder="First Name"}}
