@@ -29,5 +29,5 @@ $icon-font-path: 'fonts/';
 @import 'components/tag-component';
 
 @import 'views/index';
-@import 'views/tags/index';
-@import 'views/tags/index/new';
+@import 'views/tags/list';
+@import 'views/tags/list/new';

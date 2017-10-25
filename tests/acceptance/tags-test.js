@@ -26,6 +26,6 @@ test('Clicking "New" button links to the new tag page', function(assert){
   click('button.add-new');
 
   andThen(function(){
-    assert.equal(currentRouteName(),'tags.index.new');
+    assert.equal(currentRouteName(),'tags.list.new');
   })
 })

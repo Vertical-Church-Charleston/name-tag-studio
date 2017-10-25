@@ -37,6 +37,6 @@ test('should save a record on form submission',function(assert){
   click('button[type=submit]');
   andThen(function(){
     assert.equal(find('.tags-list .tag-component .first-name').text(),'Jordan');
-    assert.equal(currentRouteName(),'tags.index.index');
+    assert.equal(currentRouteName(),'tags.list.index');
   });
 })
