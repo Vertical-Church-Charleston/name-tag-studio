@@ -30,6 +30,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    };
     ENV.APP.apiNameSpace = "api/v1";
     ENV.APP.apiUrl = "http://localhost:8080";
   }
