@@ -1,3 +1,36 @@
+@keyframes inputSectionSlideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes displaySectionSlideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes inputSectionSlideOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes displaySectionSlideOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 body.tags-list-new {
   .new-tag-section-wrapper {
     top: 0;
@@ -6,10 +39,24 @@ body.tags-list-new {
   .input-section {
     left: 0;
     background-color: theme-color('primary');
+    animation-name: inputSectionSlideIn;
+    animation-duration: .3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    &.leaving {
+      animation-name: inputSectionSlideOut;
+    }
   }
   .display-section {
     right: 0;
     background-color: white;
+    animation-name: displaySectionSlideIn;
+    animation-duration: .3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    &.leaving {
+      animation-name: displaySectionSlideOut;
+    }
   }
   .print-list {
     position: absolute;

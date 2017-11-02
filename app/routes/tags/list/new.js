@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import { later } from '@ember/runloop';
 
 export default Route.extend({
   model(){
@@ -19,6 +20,15 @@ export default Route.extend({
           template: 1
         });
       });
+    },
+    willTransition(transition){
+      if(!this.controller.get('leaving')){
+        transition.abort();
+        this.controller.set('leaving',true);
+        later(() => {
+          transition.retry().then(()=>this.controller.set('leaving',false));
+        },310);
+      }
     }
   }
 });
