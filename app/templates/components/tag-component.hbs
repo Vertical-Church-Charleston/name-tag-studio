@@ -2,4 +2,6 @@
   <span class="first-name">{{data.firstName}}</span>
   <span class="last-name">{{data.lastName}}</span>
 </div>
-<button class="btn btn-light edit-button" {{action "editButtonClicked"}}>Edit</button>
+{{#if showEditButton}}
+  <button class="btn btn-light edit-button" {{action "editButtonClicked"}}>Edit</button>
+{{/if}}
