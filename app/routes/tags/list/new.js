@@ -1,7 +1,9 @@
 import Route from '@ember/routing/route';
 import AnimateOutMixin from 'name-tags/mixins/animate-out';
+import { inject } from '@ember/service';
 
 export default Route.extend(AnimateOutMixin,{
+  printList: inject(),
   model(){
     return {
       firstName: '',
@@ -13,7 +15,7 @@ export default Route.extend(AnimateOutMixin,{
     create(){
       var newTag = this.store.createRecord('tag',this.controller.get('model'));
       newTag.save().then(()=>{
-        this.controller.get('printList').pushObject(newTag);
+        this.get('printList.list').pushObject(newTag);
         this.controller.set('model',{
           firstName: '',
           lastName: '',

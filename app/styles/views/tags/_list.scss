@@ -73,7 +73,7 @@ body.tags-list {
     }
   }
   .print-list {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: theme-color('primary');
@@ -84,6 +84,7 @@ body.tags-list {
     text-align: center;
     line-height: 60px;
     box-shadow: 0 8px 32px -4px transparentize(theme-color('dark'),0.6);
+    z-index: 10;
     .count {
       line-height: 22px;
       text-align: center;
