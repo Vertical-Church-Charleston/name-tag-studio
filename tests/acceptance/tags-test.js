@@ -50,3 +50,13 @@ test('Clicking a tag "Edit" button links to the edit tag page', function(assert)
     assert.equal(find('.tag-component').length, 1);
   })
 })
+
+test('Clicking a tag adds it to the print list',function(assert){
+  server.create('tag');
+  visit('/tags');
+  click('.tag-component:first');
+  andThen(function(){
+    var countEl = find('.print-list .count');
+    assert.equal(countEl.text().trim(),'1');
+  });
+});
