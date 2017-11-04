@@ -60,3 +60,14 @@ test('Clicking a tag adds it to the print list',function(assert){
     assert.equal(countEl.text().trim(),'1');
   });
 });
+
+test('Clicking the print list opens the print dialog',function(assert){
+  server.create('tag');
+  visit('/tags');
+  click('.tag-component:first');
+  click('.print-list');
+
+  andThen(function(){
+    assert.equal(find('.print-section').length, 1);
+  });
+});

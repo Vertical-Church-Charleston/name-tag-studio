@@ -1,7 +1,9 @@
 {{outlet}}
 {{#if printList.list.length}}
-  <div class="print-list">
-    <div class="count">{{printList.list.length}}</div>
-    <i class="oi oi-print"></i>
-  </div>
+  {{#link-to 'tags.list.print'}}
+    <div class="print-list">
+      <div class="count">{{printList.list.length}}</div>
+      <i class="oi oi-print"></i>
+    </div>
+  {{/link-to}}
 {{/if}}
