@@ -14,9 +14,10 @@
     <aside class="row tags-list">
       {{#each model as |tag|}}
         <div class="col-sm-4 col-lg-3">
-          {{#link-to 'tags.list.edit' tag}}
+          {{!-- {{#link-to 'tags.list.edit' tag}}
             {{tag-component data=tag}}
-          {{/link-to}}
+          {{/link-to}} --}}
+          {{tag-component data=tag onEditButtonClicked="linkToEditRoute"}}
         </div>
       {{/each}}
     </aside>

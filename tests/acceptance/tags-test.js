@@ -30,10 +30,10 @@ test('Clicking "New" button links to the new tag page', function(assert){
   })
 })
 
-test('Clicking a tag links to the edit tag page', function(assert){
+test('Clicking a tag "Edit" button links to the edit tag page', function(assert){
   server.create('tag');
   visit('/tags');
-  click('.tag-component');
+  click('.tag-component .edit-button');
 
   andThen(function(){
     assert.equal(currentRouteName(),'tags.list.edit');

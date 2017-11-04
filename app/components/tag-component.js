@@ -11,5 +11,11 @@ export default Component.extend({
   }),
   backgroundImage: computed('data.template',function(){
     return `background-image: url('/images/name-tag-backs/name-tag-${this.get('data.template')}.svg')`;
-  })
+  }),
+
+  actions: {
+    editButtonClicked() {
+      this.sendAction('onEditButtonClicked',this.get('data'));
+    }
+  }
 });

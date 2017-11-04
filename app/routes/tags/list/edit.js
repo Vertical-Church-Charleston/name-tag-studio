@@ -1,7 +1,8 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import AnimateOutMixin from 'name-tags/mixins/animate-out';
 
-export default Route.extend({
+export default Route.extend(AnimateOutMixin,{
   notify: service(),
   model(params){
     return this.store.find('tag',params.id);
