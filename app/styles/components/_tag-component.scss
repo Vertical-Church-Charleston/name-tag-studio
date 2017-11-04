@@ -43,16 +43,16 @@
       }
     }
   }
-  .edit-button {
+  .buttons {
+    width: 100%;
     position: absolute;
     bottom: -42px;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 1;
     transition: bottom .3s ease-out;
+    text-align: center;
   }
   &:hover {
-    .edit-button {
+    .buttons {
       bottom: 15px;
     }
   }

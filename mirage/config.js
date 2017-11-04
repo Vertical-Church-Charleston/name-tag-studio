@@ -30,4 +30,5 @@ export default function() {
   this.get('/tags/:id');
   this.post('/tags');
   this.patch('/tags/:id');
+  this.del('/tags/:id');
 }

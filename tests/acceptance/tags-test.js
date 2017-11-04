@@ -39,3 +39,14 @@ test('Clicking a tag "Edit" button links to the edit tag page', function(assert)
     assert.equal(currentRouteName(),'tags.list.edit');
   })
 })
+
+test('Clicking a tag "Edit" button links to the edit tag page', function(assert){
+  server.create('tag');
+  server.create('tag');
+  visit('/tags');
+  click('.tag-component:first .delete-button');
+
+  andThen(function(){
+    assert.equal(find('.tag-component').length, 1);
+  })
+})

@@ -3,5 +3,8 @@
   <span class="last-name">{{data.lastName}}</span>
 </div>
 {{#if showEditButton}}
-  <button class="btn btn-light edit-button" {{action "editButtonClicked"}}>Edit</button>
+  <div class="buttons">
+    <button class="btn btn-light edit-button mr-2" {{action "editButtonClicked"}}>Edit</button>
+    <button class="btn btn-light delete-button" {{action "deleteButtonClicked"}}>Delete</button>
+  </div>
 {{/if}}

@@ -16,6 +16,9 @@ export default Component.extend({
   actions: {
     editButtonClicked() {
       this.sendAction('onEditButtonClicked',this.get('data'));
+    },
+    deleteButtonClicked() {
+      this.sendAction('onDeleteButtonClicked',this.get('data'));
     }
   }
 });

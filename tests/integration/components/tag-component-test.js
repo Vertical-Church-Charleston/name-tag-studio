@@ -22,9 +22,9 @@ test('it sets a class to render a name tag background', function(assert) {
   assert.dom('.template-1').exists();
 });
 
-test('"Edit" button only shows if "showEditButton" property is set to true', function(assert){
+test('Buttons only show if "showEditButton" property is set to true', function(assert){
   this.set('data',{template:1});
 
   this.render(hbs`{{tag-component data=data}}`);
-  assert.equal(this.$().find('.edit-button').length, 0);
+  assert.equal(this.$().find('.buttons').length, 0);
 });

@@ -18,7 +18,7 @@ export default Route.extend(AnimateOutMixin,{
         return true
       else
         this.get('notify').error('This tag does not exist',{
-          closeAfter: 10000
+          closeAfter: 5000
         });
         this.transitionTo('tags.list');
     },
