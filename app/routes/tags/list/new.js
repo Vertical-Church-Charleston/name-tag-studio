@@ -1,9 +1,9 @@
 import Route from '@ember/routing/route';
 import AnimateOutMixin from 'name-tags/mixins/animate-out';
-import { inject } from '@ember/service';
+import { inject as service } from '@ember/service';
 
 export default Route.extend(AnimateOutMixin,{
-  printList: inject(),
+  printList: service(),
   model(){
     return {
       firstName: '',

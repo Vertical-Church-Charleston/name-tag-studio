@@ -103,7 +103,7 @@ body.tags-list {
   }
 }
 
-body.tags-list:not(.tags-list-new):not(.tags-list-edit) {
+body.tags-list:not(.tags-list-new):not(.tags-list-edit):not(.tags-list-print) {
   .tag-component {
     &:hover {
       transform: scale(1.05);
