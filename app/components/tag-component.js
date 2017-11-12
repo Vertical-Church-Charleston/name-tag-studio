@@ -16,7 +16,11 @@ export default Component.extend({
   }),
 
   click() {
-    this.get('printList.list').pushObject(this.get('data'));
+    if(this.get('printList.list').indexOf(this.get('data')) > -1){
+      this.get('printList.list').removeObject(this.get('data'));
+    }else{
+      this.get('printList.list').pushObject(this.get('data'));
+    }
   },
 
   actions: {

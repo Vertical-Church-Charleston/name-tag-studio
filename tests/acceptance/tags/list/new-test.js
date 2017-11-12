@@ -1,12 +1,7 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'name-tags/tests/helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | tags/index/new',{
-  afterEach(){
-    let route = this.application.__container__.lookup('route:tags/list/new');
-    route.set('printList.list',[]);
-  }
-});
+moduleForAcceptance('Acceptance | tags/index/new');
 
 
 test('should render a form section and display section', function(assert) {
