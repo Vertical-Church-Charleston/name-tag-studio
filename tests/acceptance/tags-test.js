@@ -44,7 +44,7 @@ test('Clicking a tag "Edit" button links to the edit tag page', function(assert)
   server.create('tag');
   server.create('tag');
   visit('/tags');
-  click('.tag-component:first .delete-button');
+  click('.tag-component .delete-button');
 
   andThen(function(){
     assert.equal(find('.tag-component').length, 1);
@@ -54,7 +54,7 @@ test('Clicking a tag "Edit" button links to the edit tag page', function(assert)
 test('Clicking a tag adds it to the print list',function(assert){
   server.create('tag');
   visit('/tags');
-  click('.tag-component:first-of-type');
+  click('.tag-component .click-area');
   andThen(function(){
     var countEl = find('.print-list .count');
     assert.equal(countEl.text().trim(),'1');
@@ -64,9 +64,9 @@ test('Clicking a tag adds it to the print list',function(assert){
 test('Clicking a tag after adding it to the print list removes it from the print list',function(assert){
   server.create('tag');
   visit('/tags');
-  click('.tag-component:first-of-type');
+  click('.tag-component .click-area');
   andThen(function(){
-    click('.tag-component:first-of-type');
+    click('.tag-component .click-area');
     andThen(function(){
       assert.notOk(find('.print-list'));
     })
@@ -76,7 +76,7 @@ test('Clicking a tag after adding it to the print list removes it from the print
 test('Clicking the print list opens the print dialog',function(assert){
   server.create('tag');
   visit('/tags');
-  click('.tag-component:first');
+  click('.tag-component .click-area');
   click('.print-list');
 
   andThen(function(){
