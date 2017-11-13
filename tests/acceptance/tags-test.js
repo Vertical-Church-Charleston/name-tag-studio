@@ -65,10 +65,11 @@ test('Clicking a tag after adding it to the print list removes it from the print
   server.create('tag');
   visit('/tags');
   click('.tag-component .click-area');
-  andThen(function(){
+  andThen(()=>{
     click('.tag-component .click-area');
-    andThen(function(){
-      assert.notOk(find('.print-list'));
+    andThen(()=>{
+      let route = this.application.__container__.lookup('route:tags/list/new');
+      assert.equal(route.get('printList.list.length'),0);
     })
   });
 });

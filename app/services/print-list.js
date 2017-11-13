@@ -1,5 +1,8 @@
 import Service from '@ember/service';
 
 export default Service.extend({
-  list: []
+  init() {
+    this._super(...arguments);
+    this.list = [];
+  }
 });

@@ -4,10 +4,6 @@ import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('tag-component', 'Integration | Component | tag component', {
   integration: true,
-  afterEach(){
-    let subject = this.subject()
-    subject.set('printList.list',[]);
-  }
 });
 
 test('it renders first and last name', function(assert) {
