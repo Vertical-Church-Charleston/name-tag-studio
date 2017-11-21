@@ -68,6 +68,9 @@ body.tags-list {
     animation-fill-mode: forwards;
     top: 0;
     z-index: 4;
+    .tag-component {
+      transition: transform 350ms ease-out;
+    }
     &.leaving {
       animation-name: displaySectionSlideOut;
     }
@@ -85,6 +88,10 @@ body.tags-list {
     line-height: 60px;
     box-shadow: 0 8px 32px -4px transparentize(theme-color('dark'),0.6);
     z-index: 10;
+    // visibility: hidden;
+    &.show {
+      visibility: visible;
+    }
     .count {
       line-height: 22px;
       text-align: center;

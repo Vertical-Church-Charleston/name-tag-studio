@@ -6,6 +6,7 @@
   box-shadow: 0px 40px 40px -20px rgba(0,0,0,0.4);
   transition: transform .5s ease, box-shadow .5s ease;
   overflow: hidden;
+  position: relative;
   .name {
     position: absolute;
     bottom: 0;
