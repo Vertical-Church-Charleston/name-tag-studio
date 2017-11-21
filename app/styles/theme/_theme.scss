@@ -3,23 +3,23 @@
 @each $color, $value in $theme-colors {
   @if $color == 'light' {
     .btn-light:not(.without-shadow) {
-      box-shadow: 0 8px 32px -4px transparentize(theme-color('dark'),0.6);
+      box-shadow: 0 8px 20px -2px transparentize(theme-color('dark'),0.6);
       &:focus,
       &.focus,
       &:not([disabled]):not(.disabled):active,
       &:not([disabled]):not(.disabled).active {
-        box-shadow: 0 8px 32px -4px transparentize(theme-color('dark'),0.6);
+        box-shadow: 0 8px 20px -2px transparentize(theme-color('dark'),0.6);
       }
     }
   } @else {
     .btn-#{$color}:not(.without-shadow) {
       color: white;
-      box-shadow: 0 8px 32px -4px transparentize($value,0.4);
+      box-shadow: 0 8px 20px -2px transparentize($value,0.4);
       &:focus,
       &.focus,
       &:not([disabled]):not(.disabled):active,
       &:not([disabled]):not(.disabled).active {
-        box-shadow: 0 8px 32px -4px transparentize($value,0.4);
+        box-shadow: 0 8px 20px -2px transparentize($value,0.4);
       }
     }
   }
