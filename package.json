@@ -36,6 +36,7 @@
     "ember-cli-uglify": "^2.0.0",
     "ember-data": "^2.16.3",
     "ember-export-application-global": "^2.0.0",
+    "ember-fetch": "^3.4.4",
     "ember-load-initializers": "^1.0.0",
     "ember-math-helpers": "^2.2.3",
     "ember-notify": "^5.2.1",
