@@ -33,7 +33,7 @@ module.exports = function(environment) {
     ENV['ember-cli-mirage'] = {
       enabled: false
     };
-    ENV.APP.apiNameSpace = "api/v1";
+    ENV.APP.apiNameSpace = "";
     ENV.APP.apiUrl = "http://localhost:8080";
   }
 
