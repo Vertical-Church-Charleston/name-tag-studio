@@ -12,6 +12,7 @@ section.print-section {
   flex-direction: column;
   .top, .bottom {
     flex-grow: 0;
+    flex-shrink: 0;
     padding: 10px;
     text-align: right;
   }
