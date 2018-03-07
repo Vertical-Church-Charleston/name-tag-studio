@@ -18,9 +18,10 @@ const showFile = (blob)=>{
   // For other browsers: 
   // Create a link pointing to the ObjectURL containing the blob.
   const data = window.URL.createObjectURL(newBlob);
+  const date = new Date();
   var link = document.createElement('a');
   link.href = data;
-  link.download="file.pdf";
+  link.download = `name-tags-${date.getDate()}-${date.getMonth()}-${date.getFullYear()}.pdf`;
   link.click();
   setTimeout(()=>{
     // For Firefox it is necessary to delay revoking the ObjectURL
@@ -39,7 +40,7 @@ export default Route.extend({
       }
     },
     printTags(){
-      const tagParams = $.param({tags: this.controller.get('printList.listIds')})
+      const tagParams = $.param({ids: this.controller.get('printList.listIds')})
       fetch(`${ENV.APP.apiUrl}${ENV.APP.apiNameSpace}/printtags?${tagParams}`,{
         method: 'GET',
         headers: {
@@ -49,7 +50,7 @@ export default Route.extend({
       // .then(r => r.blob())
       // .then(showFile);
       .then(response => response.blob())
-      .then(data => window.open(URL.createObjectURL(data)))
+      .then(data => showFile(data))
     }
   }
 });
