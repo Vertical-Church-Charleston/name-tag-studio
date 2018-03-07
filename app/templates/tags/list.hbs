@@ -14,10 +14,10 @@
               {{/link-to}}
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
+          <form class="form-inline my-2 my-lg-0" {{action "doSearch" on="submit"}}>
             <aside class="search-bar mr-md-2">
-              <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-link my-2 my-sm-0" type="button"><i class="oi oi-magnifying-glass"></i></button>
+              {{input class="form-control" id="search" type="search" value=searchTerm placeholder="Search" aria-label="Search"}}
+              <button class="btn btn-link my-2 my-sm-0 search-button" type="button"><i class="oi oi-magnifying-glass"></i></button>
             </aside>
           </form>
           <div class="dropdown">
@@ -36,7 +36,7 @@
   </div>
   {{#if model.length}}
     <aside class="row tags-list">
-      {{#each model as |tag|}}
+      {{#each searchedModel as |tag|}}
         <div class="col-sm-4 col-lg-3">
           {{!-- {{#link-to 'tags.list.edit' tag}}
             {{tag-component data=tag}}

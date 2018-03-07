@@ -17,6 +17,9 @@ export default Route.extend({
           closeAfter: 5000
         });
       });
+    },
+    doSearch(){
+      
     }
   }
 });

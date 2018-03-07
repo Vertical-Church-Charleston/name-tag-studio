@@ -96,3 +96,20 @@ test('Clicking the print list opens the print dialog',function(assert){
     assert.equal(find('.print-section').length, 1);
   });
 });
+
+test('Searching a name filters results',function(assert){
+  server.create('tag',{
+    firstName: 'George',
+    lastName: 'Washington'
+  });
+  server.create('tag',{
+    firstName: 'Abe',
+    lastName: 'Lincoln'
+  });
+  visit('/tags');
+  fillIn('#search','Washington');
+  click('.search-button');
+  andThen(()=>{
+    assert.equal( find('.tag-component').length, 1 );
+  });
+});
