@@ -9,15 +9,16 @@
 @import 'theme/variables';
 
 // Bootstrap Elements
-@import "reboot";
-@import "grid";
-@import "buttons";
-@import "nav";
-@import "type";
-@import "utilities";
-@import "forms";
-@import "alert";
-@import "navbar";
+@import "ember-cli-bootstrap-4/reboot";
+@import "ember-cli-bootstrap-4/grid";
+@import "ember-cli-bootstrap-4/buttons";
+@import "ember-cli-bootstrap-4/nav";
+@import "ember-cli-bootstrap-4/type";
+@import "ember-cli-bootstrap-4/utilities";
+@import "ember-cli-bootstrap-4/forms";
+@import "ember-cli-bootstrap-4/alert";
+@import "ember-cli-bootstrap-4/navbar";
+@import "ember-cli-bootstrap-4/dropdown";
 
 // Bootstrap theme overrides
 @import 'theme/theme';
@@ -35,3 +36,4 @@ $icon-font-path: 'fonts/';
 @import 'views/tags/list/new';
 @import 'views/tags/list/edit';
 @import 'views/tags/list/print';
+@import "ember-cli-bootstrap-4/bootstrap";
