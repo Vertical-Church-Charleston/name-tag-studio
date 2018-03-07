@@ -32,8 +32,20 @@
 }
 
 body.tags-list {
-  .nav {
+  .navbar {
     padding: 40px 0;
+    .search-bar {
+      position: relative;
+      input {
+        padding-right: 28px;
+        box-sizing: border-box;
+      }
+      .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
   }
   .tag-component {
     margin-bottom: 15%;
