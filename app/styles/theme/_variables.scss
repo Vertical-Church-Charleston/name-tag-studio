@@ -24,6 +24,7 @@ $btn-border-radius-sm: #{$line-height-sm + strip-unit($input-btn-padding-x-sm)}r
 $btn-border-radius-lg: #{$line-height-lg + strip-unit($input-btn-padding-x-lg)}rem;
 
 // Forms
+$input-border-color: transparent;
 $input-border-radius: #{$input-btn-line-height + strip-unit($input-btn-padding-y)}rem;
 $input-border-radius-lg: #{$input-btn-line-height-lg + strip-unit($input-btn-padding-y-lg)}rem;
 $input-border-radius-sm: #{$input-btn-line-height-sm + strip-unit($input-btn-padding-y-sm)}rem;
