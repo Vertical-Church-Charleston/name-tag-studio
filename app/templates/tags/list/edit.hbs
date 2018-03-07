@@ -4,7 +4,7 @@
   {{/link-to}}
   <form class="w-50" {{action "update" on="submit"}}>
     <div class="form-group">
-      {{input type="text" value=model.firstName class="form-control with-shadow form-control-lg" id="first-name" placeholder="First Name"}}
+      {{input type="text" autofocus="autofocus" value=model.firstName class="form-control with-shadow form-control-lg" id="first-name" placeholder="First Name"}}
     </div>
     <div class="form-group">
       {{input type="text" value=model.lastName class="form-control with-shadow form-control-lg" id="last-name" placeholder="Last Name"}}
