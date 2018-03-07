@@ -31,6 +31,7 @@ export default Component.extend({
       this.sendAction('onEditButtonClicked',this.get('data'));
     },
     deleteButtonClicked() {
+      this.get('printList.list').removeObject(this.get('data'));
       this.sendAction('onDeleteButtonClicked',this.get('data'));
     }
   }

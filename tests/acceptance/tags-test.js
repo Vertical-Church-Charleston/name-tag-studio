@@ -51,11 +51,23 @@ test('Clicking a tag "Delete" removes it from the list', function(assert){
   })
 })
 
+test('Clicking a tag "Delete" removes it from the print list', function(assert){
+  server.create('tag');
+  visit('/tags');
+  click('.tag-component .click-area');
+  click('.tag-component .delete-button');
+
+  andThen(()=>{
+    let route = this.application.__container__.lookup('route:tags/list/new');
+    assert.equal(route.get('printList.list.length'),0);
+  })
+})
+
 test('Clicking a tag adds it to the print list',function(assert){
   server.create('tag');
   visit('/tags');
   click('.tag-component .click-area');
-  andThen(function(){
+  andThen(()=>{
     var countEl = find('.print-list .count');
     assert.equal(countEl.text().trim(),'1');
   });
