@@ -12,6 +12,9 @@ module.exports = function(defaults) {
         'node_modules/bootstrap/scss',
         'node_modules/open-iconic/font/css'
       ]
+    },
+    'ember-cli-bootstrap-4': {
+      js: ['util', 'dropdown', 'collapse']
     }
   });
 
