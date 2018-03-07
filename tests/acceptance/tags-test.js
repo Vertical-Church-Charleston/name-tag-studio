@@ -40,7 +40,7 @@ test('Clicking a tag "Edit" button links to the edit tag page', function(assert)
   })
 })
 
-test('Clicking a tag "Edit" button links to the edit tag page', function(assert){
+test('Clicking a tag "Delete" removes it from the list', function(assert){
   server.create('tag');
   server.create('tag');
   visit('/tags');
