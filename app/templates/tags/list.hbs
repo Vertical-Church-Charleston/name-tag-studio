@@ -1,3 +1,5 @@
+{{hot-key key="a" meta=true on-press=(action 'toggleSelection' true)}} {{!-- cmd+s --}}
+
 <section class="container">
   <div class="row">
     <div class="col-sm-12">
@@ -25,7 +27,7 @@
               Actions
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Select/De-Select All</a>
+              <a class="dropdown-item select-all" href="#" {{action "toggleSelection"}}>Select/De-Select All</a>
               <a class="dropdown-item" href="#">Import Names</a>
               <a class="dropdown-item" href="#">Edit Selected Tags</a>
             </div>

@@ -8,5 +8,8 @@ export default Service.extend({
   init() {
     this._super(...arguments);
     this.list = [];
+  },
+  clearList() {
+    this.set('list',[]);
   }
 });

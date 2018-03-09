@@ -108,8 +108,53 @@ test('Searching a name filters results',function(assert){
   });
   visit('/tags');
   fillIn('#search','Washington');
-  click('.search-button');
   andThen(()=>{
     assert.equal( find('.tag-component').length, 1 );
   });
 });
+
+test('Command + A selects all tags', function(assert){
+  server.create('tag',{
+    firstName: 'George',
+    lastName: 'Washington'
+  });
+  server.create('tag',{
+    firstName: 'Abe',
+    lastName: 'Lincoln'
+  });
+  visit('/tags');
+  andThen(()=>{
+    keyEvent('#ember-testing', 'keypress', '65',{metaKey: true});
+    andThen(()=>{
+      assert.equal( find('.tag-component').length, 2 );
+    })
+  });
+});
+
+test('Should add all searched tags to print list',function(assert){
+  server.create('tag',{
+    firstName: 'George',
+    lastName: 'Washington'
+  });
+  server.create('tag',{
+    firstName: 'Abe',
+    lastName: 'Lincoln'
+  });
+  visit('/tags');
+  // set search term
+  fillIn('#search','Washington');
+  andThen(()=>{
+    click('.select-all');
+    andThen(()=>{
+      var countEl = find('.print-list .count');
+      assert.equal(countEl.text().trim(),'1');
+      fillIn('#search','');
+      andThen(()=>{
+        click('.select-all');
+        andThen(()=>{
+          assert.equal(countEl.text().trim(),'2');
+        })
+      })
+    })
+  })
+})

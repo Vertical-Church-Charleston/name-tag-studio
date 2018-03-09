@@ -14,4 +14,26 @@ export default Controller.extend({
       return item.get('firstName').match(re) || item.get('lastName').match(re);
     })
   }),
+
+  actions: {
+    toggleSelection(bool){
+      if(bool !== undefined){
+        if(bool === true){
+          this.get('model').forEach((item)=>{
+            this.get('printList.list').pushObject(item);
+          });
+        }
+      }else{
+        if(this.get('printList.list.length') < this.get('searchedModel.length')){
+          this.get('searchedModel').forEach((item)=>{
+            if(this.get('printList.list').indexOf(item) === -1){
+              this.get('printList.list').pushObject(item);
+            }
+          });
+        }else{
+          this.get('printList').clearList();
+        }
+      }
+    }
+  }
 });
