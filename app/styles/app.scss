@@ -30,6 +30,7 @@ $icon-font-path: 'fonts/';
 @import 'helpers/base';
 
 @import 'components/tag-component';
+@import 'components/dropzone';
 
 @import 'views/index';
 @import 'views/tags/list';

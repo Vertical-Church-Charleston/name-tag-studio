@@ -158,3 +158,11 @@ test('Should add all searched tags to print list',function(assert){
     })
   })
 })
+
+test('Shows Dropzone on toggle click',function(assert){
+  visit('/tags')
+  click('.import-names');
+  andThen(()=>{
+    assert.equal( find('.dropzone-wrapper').hasClass('show'), true );
+  })
+})

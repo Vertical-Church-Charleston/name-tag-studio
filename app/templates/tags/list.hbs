@@ -1,5 +1,11 @@
 {{hot-key key="a" meta=true on-press=(action 'toggleSelection' true)}} {{!-- cmd+s --}}
 
+<aside class="dropzone-wrapper{{if showDropZone ' show'}}">
+  {{#drop-zone config=options}}
+    <div class="help-message">(Or click here to select a file)</div>
+  {{/drop-zone}}
+</aside>
+
 <section class="container">
   <div class="row">
     <div class="col-sm-12">
@@ -28,7 +34,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item select-all" href="#" {{action "toggleSelection"}}>Select/De-Select All</a>
-              <a class="dropdown-item" href="#">Import Names</a>
+              <a class="dropdown-item import-names" href="#" {{action "toggleDropzone"}}>Import Names</a>
               <a class="dropdown-item" href="#">Edit Selected Tags</a>
             </div>
           </div>

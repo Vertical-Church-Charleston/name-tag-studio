@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { inject } from '@ember/service';
 import { computed } from '@ember/object';
+import { debug } from '@ember/debug';
 
 export default Controller.extend({
   printList: inject(),
@@ -13,6 +14,20 @@ export default Controller.extend({
       var re = new RegExp(`\\b${this.get('searchTerm')}`,'i');
       return item.get('firstName').match(re) || item.get('lastName').match(re);
     })
+  }),
+
+  addedfile: computed(function() {
+    return function() {
+      debug('addedFile happened');
+    };
+  }),
+  options: computed(function() {
+    return {
+      url: '#',
+      addRemoveLinks: true,
+      autoProcessQueue: false,
+      addedfile: this.addedfile
+    };
   }),
 
   actions: {
@@ -34,6 +49,9 @@ export default Controller.extend({
           this.get('printList').clearList();
         }
       }
+    },
+    toggleDropzone(){
+      this.set('showDropZone', !this.get('showDropZone'));
     }
   }
 });
