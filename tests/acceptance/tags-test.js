@@ -123,11 +123,10 @@ test('Command + A selects all tags', function(assert){
     lastName: 'Lincoln'
   });
   visit('/tags');
+  keyEvent(find('#ember-testing'), 'keypress', '65',{metaKey: true});
   andThen(()=>{
-    keyEvent('#ember-testing', 'keypress', '65',{metaKey: true});
-    andThen(()=>{
-      assert.equal( find('.tag-component').length, 2 );
-    })
+    var countEl = find('.print-list .count');
+    assert.equal(countEl.text().trim(),'1');
   });
 });
 
@@ -163,6 +162,6 @@ test('Shows Dropzone on toggle click',function(assert){
   visit('/tags')
   click('.import-names');
   andThen(()=>{
-    assert.equal( find('.dropzone-wrapper').hasClass('show'), true );
+    assert.equal( find('.drop-zone').hasClass('show'), true );
   })
 })

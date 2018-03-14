@@ -1,10 +1,6 @@
 {{hot-key key="a" meta=true on-press=(action 'toggleSelection' true)}} {{!-- cmd+s --}}
 
-<aside class="dropzone-wrapper{{if showDropZone ' show'}}">
-  {{#drop-zone config=options}}
-    <div class="help-message">(Or click here to select a file)</div>
-  {{/drop-zone}}
-</aside>
+{{drop-zone fileInputChanged="receivedFile" isDragging=isDragging show=showDropZone}}
 
 <section class="container">
   <div class="row">

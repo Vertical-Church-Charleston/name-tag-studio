@@ -41,5 +41,10 @@ module.exports = function(defaults) {
     destDir: '/iconic'
   });
 
+  app.import({
+    development: 'node_modules/papaparse/papaparse.js',
+    production:  'node_modules/papaparse/papaparse.min.js'
+  });
+
   return app.toTree([extraAssets,iconPage]);
 };

@@ -1,30 +1,72 @@
-.dropzone-wrapper {
+.drop-zone {
+  height: 230px;
+  margin-top: -245px;
+  width: 100%;
+  z-index: 100;
+  background-color: transparent;
   padding: 0 15px;
-  margin-top: -165px;
-  overflow: hidden;
   transition: margin-top .3s ease-out;
   &.show {
     margin-top: 0;
   }
-}
-.dropzone {
-  border: 2px dashed $vertical-primary;
-  border-radius: 5px;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 15px;
-  .dz-message {
-    font-weight: 500;
+  .drop-zone-area {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    margin-top: 15px;
+    border: 2px dashed lighten($vertical-grey, 40%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: lighten($vertical-grey, 20%);
+    font-weight: 100;
     font-size: 24px;
-    color: lighten($vertical-grey, 15%);
-    letter-spacing: 1px;
-    margin: 0;
+    transition: border-color .3s linear;
+    z-index: 0;
+    .icon {
+      font-size: 48px;
+    }
+    &.is-dragging {
+      border-color: $vertical-primary;
+    }
   }
-  .help-message {
-    text-align: center;
-    order: 2;
-    color: lighten($vertical-grey, 40%);
+  .drop-zone-file {
+    display: none;
   }
 }
+
+// .dropzone-wrapper {
+//   padding: 0 15px;
+//   margin-top: -84px;
+//   overflow: hidden;
+//   transition: margin-top .3s ease-out;
+//   &.show {
+//     margin-top: 0;
+//   }
+// }
+// .dropzone {
+//   border: 2px dashed $vertical-primary;
+//   border-radius: 5px;
+//   background: white;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   margin-top: 15px;
+//   .dz-message {
+//     font-weight: 500;
+//     font-size: 24px;
+//     color: lighten($vertical-grey, 15%);
+//     letter-spacing: 1px;
+//     margin: 0;
+//   }
+//   .help-message {
+//     text-align: center;
+//     order: 2;
+//     color: lighten($vertical-grey, 40%);
+//   }
+// }
+// .dropzone-preview {
+//   display: hidden;
+// }
