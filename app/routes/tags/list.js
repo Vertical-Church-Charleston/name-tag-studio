@@ -20,6 +20,23 @@ export default Route.extend({
     },
     doSearch(){
       
+    },
+    createTags(tags, firstNameKey, lastNameKey) {
+      const modelList = tags.map((tag) => {
+        return this.store.createRecord('tag', {
+          firstName: tag[firstNameKey],
+          lastName: tag[lastNameKey],
+          template: 1
+        });
+      });
+      console.log(modelList);
+      const tagList = this.store.createRecord('taglist', {modelList: modelList});
+      console.log(tagList);
+      tagList.save().then(()=>{
+        this.get('notify').success('Tags Created',{
+          closeAfter: 5000
+        });
+      });
     }
   }
 });
