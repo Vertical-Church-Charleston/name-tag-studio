@@ -34,6 +34,8 @@ export default Route.extend({
         this.get('notify').success('Tags Created',{
           closeAfter: 5000
         });
+        document.getElementById("drop-zone-file").value = "";
+        this.controller.set('showDropZone', false);
       }).catch(()=>{
         this.get('notify').danger('There was an error importing CSV',{
           closeAfter: 5000
