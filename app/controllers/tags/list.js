@@ -5,11 +5,11 @@ import { computed } from '@ember/object';
 export default Controller.extend({
   printList: inject(),
 
-  savedRecords: computed('model.[]',function(){
+  savedRecords: computed('model.[]','model.@each.isNew',function(){
     return this.get('model').filter((tag) => !tag.get('isNew'));
   }),
 
-  searchedModel: computed('savedRecords','searchTerm',function(){
+  searchedModel: computed('savedRecords.[]','searchTerm',function(){
     if(!this.get('searchTerm')){
       return this.get('savedRecords');
     }
