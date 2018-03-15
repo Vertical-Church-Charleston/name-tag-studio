@@ -99,7 +99,7 @@ body.tags-list {
     border-radius: 50%;
     text-align: center;
     line-height: 60px;
-    box-shadow: 0 8px 32px -4px transparentize(theme-color('dark'),0.6);
+    box-shadow: 0 8px 20px -2px transparentize(theme-color('primary'),0.6);
     z-index: 10;
     // visibility: hidden;
     &.show {
