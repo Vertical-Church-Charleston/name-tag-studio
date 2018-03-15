@@ -34,6 +34,10 @@ export default Route.extend({
         this.get('notify').success('Tags Created',{
           closeAfter: 5000
         });
+      }).catch(()=>{
+        this.get('notify').danger('There was an error importing CSV',{
+          closeAfter: 5000
+        });
       });
     }
   }
