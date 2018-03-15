@@ -5,11 +5,15 @@ import { computed } from '@ember/object';
 export default Controller.extend({
   printList: inject(),
 
-  searchedModel: computed('model.[]','searchTerm',function(){
+  savedRecords: computed('model.[]',function(){
+    return this.get('model').filter((tag) => !tag.get('isNew'));
+  }),
+
+  searchedModel: computed('savedRecords','searchTerm',function(){
     if(!this.get('searchTerm')){
-      return this.get('model');
+      return this.get('savedRecords');
     }
-    return this.get('model').filter((item)=>{
+    return this.get('savedRecords').filter((item)=>{
       var re = new RegExp(`\\b${this.get('searchTerm')}`,'i');
       return item.get('firstName').match(re) || item.get('lastName').match(re);
     })
@@ -19,7 +23,7 @@ export default Controller.extend({
     toggleSelection(bool){
       if(bool !== undefined){
         if(bool === true){
-          this.get('model').forEach((item)=>{
+          this.get('savedRecords').forEach((item)=>{
             this.get('printList.list').pushObject(item);
           });
         }
@@ -37,9 +41,6 @@ export default Controller.extend({
     },
     toggleDropzone(){
       this.set('showDropZone', !this.get('showDropZone'));
-    },
-    receivedFile(file) {
-      console.log(file);
     }
   }
 });
