@@ -29,9 +29,7 @@ export default Route.extend({
           template: 1
         });
       });
-      console.log(modelList);
       const tagList = this.store.createRecord('taglist', {modelList: modelList});
-      console.log(tagList);
       tagList.save().then(()=>{
         this.get('notify').success('Tags Created',{
           closeAfter: 5000
