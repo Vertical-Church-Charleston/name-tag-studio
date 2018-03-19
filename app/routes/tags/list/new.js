@@ -10,7 +10,7 @@ export default Route.extend(AnimateOutMixin,{
     return {
       firstName: '',
       lastName: '',
-      template: 1
+      template: 2
     };
   },
   actions: {
@@ -31,7 +31,7 @@ export default Route.extend(AnimateOutMixin,{
           this.controller.set('model',{
             firstName: '',
             lastName: '',
-            template: 1
+            template: 2
           });
           later(() => {
             tagComponent.css({

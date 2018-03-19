@@ -26,7 +26,7 @@ export default Route.extend({
         return this.store.createRecord('tag', {
           firstName: tag[firstNameKey],
           lastName: tag[lastNameKey],
-          template: 1
+          template: 2
         });
       });
       const tagList = this.store.createRecord('taglist', {modelList: modelList});
