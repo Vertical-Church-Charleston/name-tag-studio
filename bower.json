@@ -1,0 +1,6 @@
+{
+  "name": "name-tags",
+  "dependencies": {
+    "spin.js": "^3.1.0"
+  }
+}
