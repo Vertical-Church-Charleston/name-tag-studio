@@ -18,5 +18,7 @@ section.print-section {
   }
   .list {
     flex-grow: 1;
+    overflow: auto;
+    padding-bottom: 10px;
   }
 }
