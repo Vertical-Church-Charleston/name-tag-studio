@@ -9,4 +9,7 @@ body, html {
 }
 body {
   font-family: "Gibson",sans-serif !important;
+  &.tags-list-print {
+    overflow: hidden;
+  }
 }
