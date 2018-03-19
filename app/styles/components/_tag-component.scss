@@ -13,7 +13,6 @@
     left: 0;
     width: 100%;
     z-index: 1;
-    color: white;
     text-align: center;
     height: 36.3%;
     display: flex;
@@ -38,6 +37,29 @@
     .first-name, .last-name {
       text-transform: capitalize;
       font-size: 36.88px;
+      color: white;
+      @media (max-width: 1199px){
+        font-size: 30.02px;
+      }
+      @media (max-width: 991px){
+        font-size: 30.02px;
+      }
+      @media (max-width: 769px){
+        font-size: 21.44px;
+      }
+      @media (max-width: 575px){
+        font-size: 13.55vw;
+      }
+    }
+  }
+  &.template-2 {
+    .name {
+      height: 40%;
+    }
+    .first-name, .last-name {
+      text-transform: capitalize;
+      font-size: 36.88px;
+      color: #0C90BC;
       @media (max-width: 1199px){
         font-size: 30.02px;
       }
