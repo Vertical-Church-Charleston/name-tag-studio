@@ -14,6 +14,15 @@
     </div>
   </div>
   <div class="bottom">
-    <button class="btn btn-primary without-shadow" {{action "printTags"}}>Print</button>
+    <div class="loading-button-wrapper">
+      {{#if isWorking}}
+        <div class="loader">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      {{/if}}
+      <button class="btn btn-primary without-shadow" disabled={{isWorking}} {{action "printTags"}}>Print</button>
+    </div>
   </div>
 </section>

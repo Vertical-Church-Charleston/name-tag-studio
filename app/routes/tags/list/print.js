@@ -2,6 +2,7 @@ import Route from '@ember/routing/route';
 import ENV from 'name-tags/config/environment';
 import fetch from 'fetch';
 import $ from 'jquery';
+import { later } from '@ember/runloop';
 
 const showFile = (blob)=>{
   // It is necessary to create a new blob object with mime-type explicitly set
@@ -40,17 +41,21 @@ export default Route.extend({
       }
     },
     printTags(){
-      const tagParams = $.param({ids: this.controller.get('printList.listIds')})
-      fetch(`${ENV.APP.apiUrl}${ENV.APP.apiNameSpace}/printtags?${tagParams}`,{
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/pdf'
-        }
-      })
-      // .then(r => r.blob())
-      // .then(showFile);
-      .then(response => response.blob())
-      .then(data => showFile(data))
+      this.controller.set('isWorking', true);
+      later(() => {
+        const tagParams = $.param({ids: this.controller.get('printList.listIds')})
+        fetch(`${ENV.APP.apiUrl}${ENV.APP.apiNameSpace}/printtags?${tagParams}`,{
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/pdf'
+          }
+        })
+        // .then(r => r.blob())
+        // .then(showFile);
+        .then(response => response.blob())
+        .then(data => showFile(data))
+        .then(this.controller.set('isWorking', false))
+      }, 250);
     }
   }
 });

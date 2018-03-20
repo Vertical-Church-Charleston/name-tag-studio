@@ -3,4 +3,5 @@ import { inject as service } from '@ember/service';
 
 export default Controller.extend({
   printList: service(),
+  isWorking: false
 });
