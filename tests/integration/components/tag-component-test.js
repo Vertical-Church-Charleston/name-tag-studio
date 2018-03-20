@@ -15,15 +15,8 @@ test('it renders first and last name', function(assert) {
   assert.equal(this.$().find('.last-name').text(), 'Riser');
 });
 
-test('it sets a class to render a name tag background', function(assert) {
-  this.set('data',{template:1});
-
-  this.render(hbs`{{tag-component data=data}}`);
-  assert.dom('.template-1').exists();
-});
-
 test('Buttons only show if "showEditButton" property is set to true', function(assert){
-  this.set('data',{template:1});
+  this.set('data');
 
   this.render(hbs`{{tag-component data=data}}`);
   assert.equal(this.$().find('.buttons').length, 0);

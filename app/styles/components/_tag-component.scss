@@ -14,49 +14,14 @@
     width: 100%;
     z-index: 1;
     text-align: center;
-    height: 36.3%;
+    height: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     .first-name, .last-name {
       font-weight: 600;
-      font-size: 36.88px;
       display: block;
       line-height: 1.2em;
-    }
-  }
-  .click-area {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-  }
-  &.template-1 {
-    .first-name, .last-name {
-      text-transform: capitalize;
-      font-size: 36.88px;
-      color: white;
-      @media (max-width: 1199px){
-        font-size: 30.02px;
-      }
-      @media (max-width: 991px){
-        font-size: 30.02px;
-      }
-      @media (max-width: 769px){
-        font-size: 21.44px;
-      }
-      @media (max-width: 575px){
-        font-size: 13.55vw;
-      }
-    }
-  }
-  &.template-2 {
-    .name {
-      height: 40%;
-    }
-    .first-name, .last-name {
       text-transform: capitalize;
       font-size: 32px;
       color: #0C90BC;
@@ -73,6 +38,14 @@
         font-size: 13.55vw;
       }
     }
+  }
+  .click-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
   }
   .buttons {
     width: 100%;

@@ -5,15 +5,10 @@ import { inject } from '@ember/service';
 export default Component.extend({
   printList: inject(),
   classNames: ['tag-component'],
-  classNameBindings: ['templateName','tagIsInPrintList:active'],
+  classNameBindings: ['tagIsInPrintList:active'],
   attributeBindings: ['backgroundImage:style'],
 
-  templateName: computed('data.template',function(){
-    return `template-${this.get('data.template')}`;
-  }),
-  backgroundImage: computed('data.template',function(){
-    return `background-image: url('/images/name-tag-backs/name-tag-${this.get('data.template')}.svg')`;
-  }),
+  backgroundImage: `background-image: url('/images/name-tag.png')`,
 
   tagIsInPrintList: computed('printList.list.[]',function(){
     return this.get('printList.list').indexOf(this.get('data')) > -1;

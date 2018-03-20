@@ -5,7 +5,7 @@ import moduleForAcceptance from 'name-tags/tests/helpers/module-for-acceptance';
 moduleForAcceptance('Acceptance | tags/list/edit');
 
 test('should render pre-filled input and display sections', function(assert) {
-  server.create('tag',{firstName:"Jordan",lastName:"Riser",template:1});
+  server.create('tag',{firstName:"Jordan",lastName:"Riser"});
   visit('/tags/edit/1');
 
   andThen(function() {
@@ -24,7 +24,7 @@ test('should redirect to list page if model was not found',function(assert){
 });
 
 test('should not update a record without saving',function(assert){
-  server.create('tag',{firstName:"Jordan",lastName:"Riser",template:1});
+  server.create('tag',{firstName:"Jordan",lastName:"Riser"});
   visit('/tags/edit/1');
   fillIn('input#first-name','Josh');
   andThen(function(){
@@ -36,7 +36,7 @@ test('should not update a record without saving',function(assert){
 });
 
 test('should save a record on form submission',function(assert){
-  server.create('tag',{firstName:"Jordan",lastName:"Riser",template:1});
+  server.create('tag',{firstName:"Jordan",lastName:"Riser"});
   visit('/tags/edit/1');
   fillIn('input#first-name','Josh');
   fillIn('input#last-name','Riser');
