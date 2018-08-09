@@ -4,7 +4,17 @@ import { inject as service } from '@ember/service';
 export default Route.extend({
   notify: service(),
   model() {
-    return this.store.findAll('tag');
+    return this.store.findAll('tag').catch((error) => {
+      console.log(error);
+      let message = 'There was an error connecting to the API';
+      if (error.code === 404) {
+        message = 'No tags were found'
+      }
+      this.get('notify').error(message,{
+        closeAfter: 5000
+      });
+      return []
+    });
   },
 
   actions: {
