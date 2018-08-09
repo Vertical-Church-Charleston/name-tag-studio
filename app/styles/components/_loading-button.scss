@@ -1,0 +1,48 @@
+.loading-button {
+  position: relative;
+  .spinner-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .spinner{
+      color: #fff;
+      &:after, &:before{
+        content: '';
+        position: absolute;
+        left: 0;right: 0;top: 0;bottom: 0;
+        border-radius: 100%;
+        box-shadow: 0 0 0 3px;
+        animation: spinner-bubble 1.3s linear 0s infinite;
+        margin: auto;
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+      }
+      &:before{
+        animation: spinner-bubble 1.3s linear 2s infinite;
+      }
+    }
+  }
+}
+.btn-light.working {
+  background-color: #dadada !important;
+  border-color: #dadada !important;
+  opacity: 1 !important;
+}
+@keyframes spinner-bubble {
+  from{
+    width: 10px;
+    height: 10px;
+    opacity: .8;
+  }
+  to{
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+  }
+}
