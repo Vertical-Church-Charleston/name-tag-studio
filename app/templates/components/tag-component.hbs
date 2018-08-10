@@ -6,6 +6,6 @@
   <div class="click-area" {{action "tagClicked"}}></div>
   <div class="buttons">
     <button class="btn btn-light edit-button mr-2" {{action "editButtonClicked"}}>Edit</button>
-    <button class="btn btn-light delete-button" {{action "deleteButtonClicked"}}>Delete</button>
+    {{#loading-button class="delete-button" onClick=(action "deleteButtonClicked") working=data.isDeleted}}Delete{{/loading-button}}
   </div>
 {{/if}}
