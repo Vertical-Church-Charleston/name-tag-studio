@@ -14,15 +14,20 @@ module.exports = function(deployTarget) {
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
-    ENV.plugins = ["s3","s3-index","gzip","revision-data","manifest","build"];
     ENV['s3'] = {
+      profile: 'verticalchurch',
       bucket: 'nametag-studio',
       region: 'us-east-1'
     };
     ENV['s3-index'] = {
+      profile: 'verticalchurch',
       bucket: 'nametag-studio',
       allowOverwrite: true,
       region: 'us-east-1'
+    };
+    ENV.cloudfront = {
+      profile: 'verticalchurch',
+      distribution: 'E6BJ0PI5YIJAD'
     };
   }
 
