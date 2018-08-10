@@ -7,6 +7,10 @@ export default Component.extend({
   classNameBindings: ['buttonSize','block:btn-block','buttonColor','working'],
   attributeBindings: ['buttonType:type','working:disabled'],
 
+  click() {
+    this.sendAction('onClick');
+  },
+
   buttonSize: computed('size',function(){
     switch(this.get('size')){
       case 'small':
