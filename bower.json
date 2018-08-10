@@ -1,4 +1,6 @@
 {
   "name": "name-tags",
-  "dependencies": {}
+  "dependencies": {
+    "raven-js": "^3.26.4"
+  }
 }

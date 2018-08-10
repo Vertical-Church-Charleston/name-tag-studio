@@ -46,5 +46,8 @@ module.exports = function(defaults) {
     production:  'node_modules/papaparse/papaparse.min.js'
   });
 
+  app.import('bower_components/raven-js/dist/raven.js');
+  app.import('bower_components/raven-js/dist/plugins/ember.js');
+
   return app.toTree([extraAssets,iconPage]);
 };

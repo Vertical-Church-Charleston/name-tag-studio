@@ -20,6 +20,12 @@
     {{content-for "body"}}
 
     <script src="{{rootURL}}assets/vendor.js"></script>
+    <script>
+      Raven
+        .config('https://36546d9b37f941048d48364270a4cda7@sentry.io/1259603')
+        .addPlugin(Raven.Plugins.Ember)
+        .install();
+    </script>
     <script src="{{rootURL}}assets/name-tags.js"></script>
 
     {{content-for "body-footer"}}
