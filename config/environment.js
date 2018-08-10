@@ -34,7 +34,7 @@ module.exports = function(environment) {
       enabled: false
     };
     ENV.APP.apiNameSpace = "";
-    ENV.APP.apiUrl = "http://localhost:8080";
+    ENV.APP.apiUrl = "http://localhost:3000";
   }
 
   if (environment === 'test') {
@@ -49,13 +49,13 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
-    ENV.APP.apiNameSpace = "/api/v1";
-    ENV.APP.apiUrl = '';
+    ENV.APP.apiNameSpace = "dev";
+    ENV.APP.apiUrl = "http://localhost:3000";
   }
 
   if (environment === 'production') {
-    ENV.APP.apiNameSpace = "/api/v1";
-    ENV.APP.apiUrl = '';
+    ENV.APP.apiNameSpace = "nametags";
+    ENV.APP.apiUrl = "https://api.verticalchurchcharleston.app";
   }
 
   return ENV;
