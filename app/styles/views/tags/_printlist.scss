@@ -1,0 +1,60 @@
+@media print {
+  a {
+    display: none
+  }
+  @page {
+    size: 8.5in 11in portrait;
+    margin: 0;
+  }
+  body {
+    font-family: "Gibson",sans-serif;
+    margin: 0;
+    color: white;
+    -webkit-print-color-adjust: exact;
+  }
+  .print-list-section {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  .print-tag-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 50%;
+  }
+  .print-tag-component {
+    position: relative;
+    overflow: hidden;
+    width: 3in;
+    margin: 0;
+    padding: 0;
+    img {
+      width: 100%;
+    }
+    .name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      text-align: center;
+      height: 36.3%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 40%;
+      span {
+        font-weight: 600;
+        line-height: 1.2em;
+        display: block;
+      }
+      .first-name, .last-name {
+        font-size: 35px;
+        text-transform: capitalize;
+        color: #0C90BC;
+      }
+    }
+  }
+}

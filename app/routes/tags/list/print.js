@@ -14,9 +14,9 @@ const showFile = (blob)=>{
   if (window.navigator && window.navigator.msSaveOrOpenBlob) {
     window.navigator.msSaveOrOpenBlob(newBlob);
     return;
-  } 
+  }
 
-  // For other browsers: 
+  // For other browsers:
   // Create a link pointing to the ObjectURL containing the blob.
   const data = window.URL.createObjectURL(newBlob);
   const date = new Date();
@@ -41,21 +41,25 @@ export default Route.extend({
       }
     },
     printTags(){
-      this.controller.set('isWorking', true);
-      later(() => {
-        const tagParams = $.param({ids: this.controller.get('printList.listIds')})
-        fetch(`${ENV.APP.apiUrl}${ENV.APP.apiNameSpace}/printtags?${tagParams}`,{
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/pdf'
-          }
-        })
-        // .then(r => r.blob())
-        // .then(showFile);
-        .then(response => response.blob())
-        .then(data => showFile(data))
-        .then(this.controller.set('isWorking', false))
-      }, 250);
+      this.transitionTo('tags.printlist')
+      // this.controller.set('isWorking', true);
+      // later(() => {
+      //   const tagParams = $.param({ids: this.controller.get('printList.listIds')})
+      //   const url = new URL(`${ENV.APP.apiUrl}${ENV.APP.apiNameSpace}/printtags`),
+      //         params = { ids: this.controller.get('printList.listIds') };
+      //   Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
+      //   fetch(url,{
+      //     method: 'GET',
+      //     headers: {
+      //       'Content-Type': 'application/pdf'
+      //     }
+      //   })
+      //   // .then(r => r.blob())
+      //   // .then(showFile);
+      //   .then(response => response.blob())
+      //   .then(data => showFile(data))
+      //   .then(this.controller.set('isWorking', false))
+      // }, 250);
     }
   }
 });

@@ -14,6 +14,7 @@ Router.map(function() {
       this.route('edit',{path:'edit/:id'});
       this.route('print');
     });
+    this.route('printlist');
   });
 });
 

@@ -52,6 +52,7 @@
     "ember-load-initializers": "^1.0.0",
     "ember-math-helpers": "^2.2.3",
     "ember-notify": "^5.2.1",
+    "ember-require-module": "^0.3.0",
     "ember-resolver": "^4.0.0",
     "ember-sinon": "^1.0.1",
     "ember-sinon-qunit": "^2.0.0",
@@ -67,6 +68,7 @@
   },
   "private": true,
   "dependencies": {
-    "papaparse": "^4.3.7"
+    "papaparse": "^4.3.7",
+    "unirest": "^0.5.1"
   }
 }

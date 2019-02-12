@@ -29,7 +29,7 @@ export default Route.extend({
       });
     },
     doSearch(){
-      
+
     },
     createTags(tags, firstNameKey, lastNameKey) {
       const modelList = tags.map((tag) => {
