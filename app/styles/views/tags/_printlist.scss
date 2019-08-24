@@ -5,9 +5,13 @@
   @page {
     size: 8.5in 11in portrait;
     margin: 0;
+    width: 8.5in;
+    height: 11in;
   }
   body {
     font-family: "Gibson",sans-serif;
+    width: 612px;
+    height: 792px;
     margin: 0;
     color: white;
     -webkit-print-color-adjust: exact;
@@ -15,21 +19,18 @@
   .print-list-section {
     display: flex;
     flex-wrap: wrap;
-    height: 100%;
-  }
-  .print-tag-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    width: 50%;
+    justify-content: space-around;
+    align-items: space-around;
   }
   .print-tag-component {
     position: relative;
     overflow: hidden;
-    width: 3in;
+    width: 35.294117647058826%;
     margin: 0;
     padding: 0;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin: 0.75in 0in;
     img {
       width: 100%;
     }

@@ -41,25 +41,25 @@ export default Route.extend({
       }
     },
     printTags(){
-      this.transitionTo('tags.printlist')
-      // this.controller.set('isWorking', true);
-      // later(() => {
-      //   const tagParams = $.param({ids: this.controller.get('printList.listIds')})
-      //   const url = new URL(`${ENV.APP.apiUrl}${ENV.APP.apiNameSpace}/printtags`),
-      //         params = { ids: this.controller.get('printList.listIds') };
-      //   Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
-      //   fetch(url,{
-      //     method: 'GET',
-      //     headers: {
-      //       'Content-Type': 'application/pdf'
-      //     }
-      //   })
-      //   // .then(r => r.blob())
-      //   // .then(showFile);
-      //   .then(response => response.blob())
-      //   .then(data => showFile(data))
-      //   .then(this.controller.set('isWorking', false))
-      // }, 250);
+      // this.transitionTo('tags.printlist')
+      this.controller.set('isWorking', true);
+      later(() => {
+        const tagParams = $.param({ids: this.controller.get('printList.listIds')})
+        const url = new URL(`${ENV.APP.apiUrl}/${ENV.APP.apiNameSpace}/printtags`),
+              params = { ids: this.controller.get('printList.listIds') };
+        Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
+        fetch(url,{
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/pdf'
+          }
+        })
+        // .then(r => r.blob())
+        // .then(showFile);
+        .then(response => response.blob())
+        .then(data => showFile(data))
+        .then(this.controller.set('isWorking', false))
+      }, 250);
     }
   }
 });
