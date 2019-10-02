@@ -45,7 +45,7 @@ export default Route.extend({
       this.controller.set('isWorking', true);
       later(() => {
         const tagParams = $.param({ids: this.controller.get('printList.listIds')})
-        const url = new URL(`${ENV.APP.apiUrl}/${ENV.APP.apiNameSpace}/printtags`),
+        const url = new URL(`${ENV.APP.apiUrl}/${ENV.APP.apiNameSpace}printtags`),
               params = { ids: this.controller.get('printList.listIds') };
         Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
         fetch(url,{
