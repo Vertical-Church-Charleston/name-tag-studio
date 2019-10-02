@@ -49,15 +49,17 @@ export default Route.extend({
               params = { ids: this.controller.get('printList.listIds') };
         Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
         fetch(url,{
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/pdf'
-          }
+          method: 'GET'
         })
         // .then(r => r.blob())
         // .then(showFile);
-        .then(response => response.blob())
-        .then(data => showFile(data))
+        // .then(response => response.blob())
+        .then(response => response.json())
+        .then(data => {
+          if (data.hasOwnProperty('body')) {
+            window.open(data.body)
+          }
+        })
         .then(this.controller.set('isWorking', false))
       }, 250);
     }
